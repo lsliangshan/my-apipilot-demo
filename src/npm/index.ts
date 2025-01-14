@@ -1,0 +1,2 @@
+
+export { getApipilotDetail } from "./getApipilotDetail"

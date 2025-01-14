@@ -1,0 +1,42 @@
+{
+  "name": "APIPILOT_PROJECT_NAME",
+  "version": "APIPILOT_PROJECT_VERSION",
+  "description": "APIPILOT_PROJECT_DESCRIPTION",
+  "type": "module",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "dev": "tsc --watch",
+    "clean": "rimraf dist",
+    "fix:path": "node fix-paths.js",
+    "build": "npm run clean && vite build && npm run fix:path",
+    "publish-latest": "npm run build && npm publish"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "APIPILOT_AUTHOR",
+  "license": "ISC",
+  "exports": APIPILOT_PROJECT_EXPORTS,
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./*"
+      ]
+    }
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "form-data": "^4.0.1",
+    "qs": "^6.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vite-plugin-dts": "^4.3.0"
+  }
+}
